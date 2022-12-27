@@ -5,51 +5,38 @@ excerpt: Next. js is a React framework that enables several extra features, incl
 isFeatured: true
 ---
 
-## Getting Started
+---
 
-First, run the development server:
+title: 'Getting Started with NextJS'
+date: '2022-10-16'
+image: getting-started-nextjs.png
+excerpt: NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.
+isFeatured: true
 
-```bash
-npm run dev
-```
+---
 
-```
-yarn dev
-```
+NextJS is a **framework for ReactJS**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Wait a second ... a "framework" for React? Isn't React itself already a framework for JavaScript?
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Well ... first of all, React is a "library" for JavaScript. That seems to be important for some people.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Not for me, but still, there is a valid point: React already is a framework / library for JavaScript. So it's already an extra layer on top of JS.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Why would we then need NextJS?
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Because NextJS makes building React apps easier - especially React apps that should have server-side rendering (though it does way more than just take care of that).
 
-```javascript
-export function getFeaturedPosts() {
-  const allPosts = getAllPosts();
-  const featuredPosts = allPosts.filter((post) => post.isFeatured);
-  return featuredPosts;
-}
-```
+In this article, we'll dive into the core concepts and features NextJS has to offer:
 
-## Learn More
+- File-based Routing
+- Built-in Page Pre-rendering
+- Rich Data Fetching Capabilities
+- Image Optimization
+- Much More
 
-To learn more about Next.js, take a look at the following resources:
+## File-based Routing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Create routes via your file + folder structure](nextjs-file-based-routing.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-```
-
-```
+... More content ...

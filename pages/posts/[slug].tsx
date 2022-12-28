@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import PostContent from "../../components/posts/post-detail/PostContent";
 import { getPostData, getPostsFiles } from "../../lib/posts-util";
 import { Post } from "../../types/posts";
+import Head from "next/head";
 
 type Props = {
   children?: React.ReactNode;
@@ -10,7 +11,15 @@ type Props = {
 };
 
 const SinglePostPage = ({ postData }: Props) => {
-  return <PostContent data={postData} />;
+  return (
+    <React.Fragment>
+      <Head>
+        <title>{postData.title}</title>
+        <meta name="description" content={postData.excerpt} />
+      </Head>
+      <PostContent data={postData} />;
+    </React.Fragment>
+  );
 };
 
 export const getStaticProps: GetStaticProps = (context) => {

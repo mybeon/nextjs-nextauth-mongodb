@@ -1,4 +1,5 @@
-import React, { FormEvent } from "react";
+import { useRouter } from "next/router";
+import React, { FormEvent, useRef, useState } from "react";
 import styles from "./form.module.css";
 
 type Props = {
@@ -6,25 +7,52 @@ type Props = {
 };
 
 const RegisterForm = (props: Props) => {
-  function registerHandler(e: FormEvent<HTMLFormElement>) {}
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const usernameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  function registerHandler(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+    const username = usernameRef.current?.value;
+    const email = emailRef.current?.value;
+    const password = passwordRef.current?.value;
+    fetch("/api/auth/register", {
+      body: JSON.stringify({ username, email, password }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          console.log(data);
+          setLoading(false);
+        } else {
+          router.replace("/");
+        }
+      });
+  }
   return (
     <React.Fragment>
       <form onSubmit={registerHandler} className={styles.form}>
         <h2>Register</h2>
         <div className={styles.control}>
           <label htmlFor="username">username</label>
-          <input type="text" id="username" />
+          <input ref={usernameRef} type="text" id="username" />
         </div>
         <div className={styles.control}>
           <label htmlFor="email">email</label>
-          <input type="email" id="email" />
+          <input ref={emailRef} type="email" id="email" />
         </div>
         <div className={styles.control}>
           <label htmlFor="password">password</label>
-          <input type="password" id="password" />
+          <input ref={passwordRef} type="password" id="password" />
         </div>
         <div className={styles.action}>
-          <button>register</button>
+          <button disabled={loading}>register</button>
         </div>
       </form>
     </React.Fragment>

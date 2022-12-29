@@ -10,7 +10,7 @@ const register = (props: Props) => {
   return (
     <React.Fragment>
       <Head>
-        <title>Login</title>
+        <title>Register</title>
       </Head>
       <RegisterForm />
     </React.Fragment>

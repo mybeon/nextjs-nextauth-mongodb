@@ -1,0 +1,51 @@
+.form {
+  margin: 1rem auto 0 auto;
+  width: 40%;
+}
+
+.form h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.control label {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.control input {
+  all: unset;
+  padding: 0.8rem;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  background-color: white;
+}
+
+.action button {
+  all: unset;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border-radius: 10px;
+  font-family: Oswald;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 150ms ease-in-out;
+}
+
+.action button:hover {
+  background-color: #221f23;
+  color: white;
+}
+
+@media screen and (max-width: 720px) {
+  .form {
+    width: 90%;
+  }
+}

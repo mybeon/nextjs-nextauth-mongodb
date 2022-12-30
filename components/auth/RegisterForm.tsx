@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { signIn } from "next-auth/react";
 import React, { FormEvent, useRef, useState } from "react";
 import styles from "./form.module.css";
 
@@ -8,7 +8,6 @@ type Props = {
 
 const RegisterForm = (props: Props) => {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
   const usernameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
@@ -31,7 +30,7 @@ const RegisterForm = (props: Props) => {
           console.log(data);
           setLoading(false);
         } else {
-          router.replace("/");
+          signIn("credentials", { redirect: true, email, password });
         }
       });
   }

@@ -25,10 +25,21 @@
   font-size: var(--size-4);
 }
 
+.header button {
+  all: unset;
+  color: var(--color-grey-100);
+  border: 2px solid var(--color-grey-100);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .header a:hover,
 .header a:active,
 .header a.active {
-  color: var(--color-grey-200);
+  color: rgb(236, 236, 236);
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {

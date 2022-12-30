@@ -37,7 +37,7 @@ const PostContent = (props: Props) => {
   return (
     <article className={styles.content}>
       <PostHeader title={props.data.title} image={props.data.image} />
-      <ReactMarkdown components={customComponents}>{props.data.content}</ReactMarkdown>
+      <ReactMarkdown components={customComponents}>{props.data.content!}</ReactMarkdown>
     </article>
   );
 };

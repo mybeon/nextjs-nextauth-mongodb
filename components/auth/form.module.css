@@ -48,6 +48,12 @@
   opacity: 0.5;
 }
 
+.action a {
+  color: #221f23;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
 @media screen and (max-width: 720px) {
   .form {
     width: 90%;
